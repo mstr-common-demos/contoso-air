@@ -90,6 +90,43 @@ npm start
 
 Browse to `http://localhost:3000` to see the app.
 
+## Docker Usage
+
+The application can also be run using Docker for easier deployment and development:
+
+### Using Docker
+
+```bash
+# Build the Docker image
+docker build -t contoso-air .
+
+# Run the container
+docker run -p 3000:3000 contoso-air
+
+# Or run in detached mode
+docker run -d -p 3000:3000 contoso-air
+```
+
+### Using Docker Compose
+
+```bash
+# Build and run with docker compose
+docker compose up
+
+# Run in detached mode
+docker compose up -d
+
+# Stop the containers
+docker compose down
+```
+
+The Docker setup includes:
+- Node.js 22 Alpine base image for smaller footprint
+- Non-root user for security
+- Health check endpoint at `/health`
+- Optimized layer caching
+- Production-ready configuration
+
 ## Cleanup
 
 ```bash
